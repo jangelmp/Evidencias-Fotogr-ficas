@@ -8,14 +8,14 @@
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div>
-        <h1>“Evidencias Fotográficas”</h1>
+
+    <!-- 🔴 Bloque 1: Encabezado y controles de cámara -->
+    <div class="groupbox red">
+      <header>
+        <h1>📸 Evidencias Fotográficas</h1>
         <p class="lead">Abrir cámara en navegador y tomar foto</p>
-      </div>
-    </header>
-    <div class="grid">
-      <div class="left card camera-area">
+      </header>
+      <div class="camera-area">
         <strong>Vista cámara</strong>
         <video id="video" autoplay playsinline muted></video>
         <div class="controls">
@@ -23,59 +23,65 @@
           <button id="btnStop" class="secondary" disabled>Detener</button>
           <button id="btnCapture" class="secondary" disabled>Tomar foto</button>
         </div>
-	<div class="form-fields">
-  		<label>
-    		Brillo:	
-			<input type="range" id="brillo" min="0.5" max="2.5" step="0.1" value="1.2">
-  		</label>
-  		<label>
-    		Contraste:
-    		<input type="range" id="contraste" min="0.5" max="2.5" step="0.1" value="1.1">
-  		</label>
-	</div>
-        <div class="form-fields">
-          <label>
-            Afiliación:
-            <input type="text" id="afiliacion" placeholder="Escribe la afiliación">
-          </label>
-          <label>
-            Ubicación:
-            <input type="text" id="ubicacion" placeholder="Escribe la ubicación">
-          </label>
-          <label>
-            Número de ticket (opcional):
-            <input type="text" id="ticket" placeholder="Ej. 12345">
-          </label>
-        </div>
-        <div class="form-fields">
-          <label>
-            Posición del recuadro:
-            <select id="recuadroPos">
-              <option value="sup-der">Arriba a la derecha</option>
-              <option value="sup-izq">Arriba a la izquierda</option>
-              <option value="inf-der">Abajo a la derecha</option>
-              <option value="inf-izq">Abajo a la izquierda</option>
-            </select>
-          </label>
-          <label>
-            Color del recuadro:
-            <input type="color" id="recuadroColor" value="#ff0000">
-          </label>
-        </div>
-        <div class="note" id="status">Estado: cámara apagada</div>
       </div>
-      <aside class="right card">
-        <div class="preview-card">
-          <strong>Previsualización</strong>
-          <div class="placeholder" id="photoPlaceholder">Aún no hay foto</div>
-          <div class="controls">
-            <button id="btnDownload" disabled>Descargar foto</button>
-            <button id="btnClear" class="secondary" disabled>Limpiar</button>
-          </div>
-        </div>
-      </aside>
     </div>
+
+    <!-- 🔵 Bloque 2: Ajustes y datos -->
+    <div class="groupbox blue">
+      <h3>🎛️ Ajustes de imagen y datos</h3>
+      <div class="form-fields">
+        <label>Brillo:
+          <input type="range" id="brillo" min="0.5" max="2.5" step="0.1" value="1.2">
+        </label>
+        <label>Contraste:
+          <input type="range" id="contraste" min="0.5" max="2.5" step="0.1" value="1.1">
+        </label>
+      </div>
+      <div class="form-fields">
+        <label>Afiliación:
+          <input type="text" id="afiliacion" placeholder="Escribe la afiliación">
+        </label>
+        <label>Ubicación:
+          <input type="text" id="ubicacion" placeholder="Escribe la ubicación">
+        </label>
+        <label>Número de ticket (opcional):
+          <input type="text" id="ticket" placeholder="Ej. 12345">
+        </label>
+      </div>
+      <div class="form-fields">
+        <label>Posición del recuadro:
+          <select id="recuadroPos">
+            <option value="sup-der">Arriba a la derecha</option>
+            <option value="sup-izq">Arriba a la izquierda</option>
+            <option value="inf-der">Abajo a la derecha</option>
+            <option value="inf-izq">Abajo a la izquierda</option>
+          </select>
+        </label>
+        <label>Color del recuadro:
+          <input type="color" id="recuadroColor" value="#ff0000">
+        </label>
+      </div>
+    </div>
+
+    <!-- 🔷 Bloque 3: Estado y previsualización -->
+    <div class="groupbox darkblue">
+      <h3>📡 Estado de cámara y previsualización</h3>
+      <div class="note" id="status">Estado: cámara apagada</div>
+      <div class="preview-card">
+        <strong>Previsualización</strong>
+        <div class="placeholder" id="photoPlaceholder">Aún no hay foto</div>
+        <div class="controls">
+          <button id="btnDownload" disabled>Descargar foto</button>
+          <button id="btnClear" class="secondary" disabled>Limpiar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⚪ Footer -->
+    <div class="groupbox footer">
+      <p>© 2025 Evidencias Fotográficas | Desarrollado por jangelmp</p>
+    </div>
+
   </div>
   <script src="script.js"></script>
 </body>
-</html>
