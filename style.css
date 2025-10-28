@@ -18,14 +18,22 @@ body {
 .wrap {
   width: 100%;
   max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Estilos para bloques visuales */
+/* Bloques visuales */
 .groupbox {
+  width: 100%;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .groupbox h1, .groupbox h3 {
@@ -105,6 +113,7 @@ button:hover:not(:disabled) {
   margin: 15px 0;
   width: 100%;
   max-width: 400px;
+  align-items: center;
 }
 
 .form-fields label {
@@ -112,9 +121,13 @@ button:hover:not(:disabled) {
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
+  width: 100%;
 }
 
-input[type="range"], input[type="color"], input[type="text"], select {
+input[type="range"],
+input[type="color"],
+input[type="text"],
+select {
   flex: 1;
   margin-left: 10px;
   padding: 6px;
@@ -122,24 +135,13 @@ input[type="range"], input[type="color"], input[type="text"], select {
   border: 1px solid #ccc;
 }
 
+input[type="range"] {
+  accent-color: #0078d7;
+}
+
 /* Previsualización */
 #photoPlaceholder {
   margin-top: 20px;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  aspect-ratio: 4 / 3; /* Mantiene proporción tipo cámara */
-  border: 2px dashed #ccc;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  color: #777;
-  font-size: 14px;
-  text-align: center;
-  padding: 10px;
-  overflow: hidden;
   width: 100%;
   max-width: 500px;
   aspect-ratio: 4 / 3;
@@ -151,18 +153,47 @@ input[type="range"], input[type="color"], input[type="text"], select {
   background: white;
   overflow: hidden;
   padding: 10px;
+  color: #777;
+  font-size: 14px;
+  text-align: center;
 }
 
-#photoPlaceholder img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
+#photoPlaceholder img,
 .captured-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   border-radius: 6px;
   display: block;
+}
+
+/* Estado de cámara */
+#status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+/* Responsivo en modo horizontal */
+@media screen and (orientation: landscape) {
+  #video {
+    max-height: 40vh;
+  }
+
+  .controls {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  .form-fields {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-fields label {
+    flex: 1;
+    margin: 0 10px;
+  }
 }
