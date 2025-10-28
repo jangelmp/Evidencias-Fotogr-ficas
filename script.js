@@ -148,7 +148,7 @@ function capturePhoto() {
     drawCenteredLines(ctx, lines, boxX, boxY, boxW, boxH, recuadroColor);
   }
   lastImageDataUrl = canvas.toDataURL('image/png');
-  placeholder.innerHTML = `<img src="${lastImageDataUrl}" alt="Foto capturada">`;
+  placeholder.innerHTML = `<img src="${lastImageDataUrl}" alt="Foto capturada" class="captured-image">`;
   btnDownload.disabled = false;
   btnClear.disabled = false;
 }
